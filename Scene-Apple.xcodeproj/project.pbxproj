@@ -17,6 +17,9 @@
 		698F67732B8BE0F500B86821 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 698F67722B8BE0F500B86821 /* SnapKit */; };
 		698F67752B8BE28C00B86821 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F67742B8BE28C00B86821 /* Constants.swift */; };
 		69CB46852B8BE598007E2BAA /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46842B8BE598007E2BAA /* BlockView.swift */; };
+		69CB46872B8BE81D007E2BAA /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46862B8BE81D007E2BAA /* Block.swift */; };
+		69CB46892B8BE8AB007E2BAA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */; };
+		69CB468B2B8BEA90007E2BAA /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,10 @@
 		696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		698F67742B8BE28C00B86821 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		69CB46842B8BE598007E2BAA /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
+		69CB46862B8BE81D007E2BAA /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
+		69CB468C2B8BF471007E2BAA /* Scene-Apple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scene-Apple.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +74,12 @@
 				696E61CA2B8BCC4300C97D58 /* EditorViewController.swift */,
 				696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */,
 				69CB46842B8BE598007E2BAA /* BlockView.swift */,
+				69CB46862B8BE81D007E2BAA /* Block.swift */,
+				69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */,
 				698F67742B8BE28C00B86821 /* Constants.swift */,
+				69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */,
 				696E61362B8A300900C97D58 /* Assets.xcassets */,
+				69CB468C2B8BF471007E2BAA /* Scene-Apple.entitlements */,
 				696E61382B8A300900C97D58 /* LaunchScreen.storyboard */,
 				696E61332B8A300500C97D58 /* Main.storyboard */,
 				696E612D2B8A300500C97D58 /* AppDelegate.swift */,
@@ -156,10 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				698F67752B8BE28C00B86821 /* Constants.swift in Sources */,
+				69CB46872B8BE81D007E2BAA /* Block.swift in Sources */,
 				696E612E2B8A300500C97D58 /* AppDelegate.swift in Sources */,
 				696E61CF2B8BCC6A00C97D58 /* BlockCell.swift in Sources */,
 				696E61CB2B8BCC4300C97D58 /* EditorViewController.swift in Sources */,
 				69CB46852B8BE598007E2BAA /* BlockView.swift in Sources */,
+				69CB46892B8BE8AB007E2BAA /* UIView+Extensions.swift in Sources */,
+				69CB468B2B8BEA90007E2BAA /* FileSystemManager.swift in Sources */,
 				696E61302B8A300500C97D58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Scene-Apple/Scene-Apple.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
@@ -338,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Scene-Apple/Scene-Apple.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;

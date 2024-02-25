@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
 
+    static let groupName = "group.com.il.scene"
 }

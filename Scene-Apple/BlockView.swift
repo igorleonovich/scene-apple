@@ -11,11 +11,25 @@ final class BlockView: UIView {
     
     static let itemHeight: CGFloat = 50
     
+    weak var delegate: BlockViewDelegate?
+    
     var textView: UITextView!
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    var block: Block! {
+        didSet {
+            configure(with: block)
+        }
+    }
+    
+    // MARK: Life Cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -26,16 +40,42 @@ final class BlockView: UIView {
         return view
     }
     
+    // MARK: Setup
+    
     private func setupUI() {
         textView = UITextView()
         addSubview(textView)
-        textView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().offset(10)
-        }
+        textView.snap(offset: 10)
         textView.delegate = self
+    }
+    
+    // MARK: Actions
+    
+    private func configure(with block: Block) {
+        textView.text = block.text
     }
 }
 
 extension BlockView: UITextViewDelegate {
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            // Detected return key press
+            print("Return key pressed")
+            delegate?.onPressReturn()
+            // Do any action you need here. For example:
+            // textView.resignFirstResponder() // to hide the keyboard
+            
+            // Return false to prevent the new line character from being added to the text view
+            return false
+        }
+        
+        // Return true for all other cases to allow the text change
+        return true
+    }
+}
+
+protocol BlockViewDelegate: AnyObject {
+    
+    func onPressReturn()
 }

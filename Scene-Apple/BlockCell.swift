@@ -9,15 +9,33 @@ import UIKit
 
 final class BlockCell: UICollectionViewCell {
     
-    var blockView: BlockView!
-    var childBlockView: BlockView?
+    weak var delegate: BlockCellDelegate?
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    var blockView: BlockView!
+    private var childBlockView: BlockView?
+    
+    var block: Block! {
+        didSet {
+            configure(with: block)
+        }
+    }
+    
+    // MARK: Life Cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Setup
+    
     private func setupUI() {
+        backgroundColor = .lightGray
+        
         blockView = BlockView()
         addSubview(blockView)
         blockView.snp.makeConstraints { make in
@@ -26,5 +44,25 @@ final class BlockCell: UICollectionViewCell {
             make.trailing.equalToSuperview()
             make.height.equalTo(BlockView.itemHeight)
         }
+        blockView.delegate = self
     }
+    
+    // MARK: Actions
+    
+    private func configure(with block: Block) {
+        blockView.block = block
+    }
+}
+
+extension BlockCell: BlockViewDelegate {
+    
+    func onPressReturn() {
+        delegate?.onPressReturn()
+    }
+}
+
+
+protocol BlockCellDelegate: AnyObject {
+    
+    func onPressReturn()
 }
