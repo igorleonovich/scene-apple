@@ -20,6 +20,8 @@
 		69CB46872B8BE81D007E2BAA /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46862B8BE81D007E2BAA /* Block.swift */; };
 		69CB46892B8BE8AB007E2BAA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */; };
 		69CB468B2B8BEA90007E2BAA /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */; };
+		69CB46932B8BF5A3007E2BAA /* TopBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46922B8BF5A3007E2BAA /* TopBarViewController.swift */; };
+		69CB46952B8BF5F0007E2BAA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46942B8BF5F0007E2BAA /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
 		69CB468C2B8BF471007E2BAA /* Scene-Apple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Scene-Apple.entitlements"; sourceTree = "<group>"; };
+		69CB46922B8BF5A3007E2BAA /* TopBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarViewController.swift; sourceTree = "<group>"; };
+		69CB46942B8BF5F0007E2BAA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +75,10 @@
 		696E612C2B8A300500C97D58 /* Scene-Apple */ = {
 			isa = PBXGroup;
 			children = (
-				696E61CA2B8BCC4300C97D58 /* EditorViewController.swift */,
-				696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */,
-				69CB46842B8BE598007E2BAA /* BlockView.swift */,
-				69CB46862B8BE81D007E2BAA /* Block.swift */,
-				69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */,
+				69CB468D2B8BF559007E2BAA /* Screens */,
+				69CB468F2B8BF57B007E2BAA /* Managers */,
+				69CB46902B8BF589007E2BAA /* Extensions */,
 				698F67742B8BE28C00B86821 /* Constants.swift */,
-				69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */,
 				696E61362B8A300900C97D58 /* Assets.xcassets */,
 				69CB468C2B8BF471007E2BAA /* Scene-Apple.entitlements */,
 				696E61382B8A300900C97D58 /* LaunchScreen.storyboard */,
@@ -87,6 +88,51 @@
 				696E613B2B8A300900C97D58 /* Info.plist */,
 			);
 			path = "Scene-Apple";
+			sourceTree = "<group>";
+		};
+		69CB468D2B8BF559007E2BAA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				69CB468E2B8BF55F007E2BAA /* Editor */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		69CB468E2B8BF55F007E2BAA /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				69CB46912B8BF59B007E2BAA /* TopBar */,
+				696E61CA2B8BCC4300C97D58 /* EditorViewController.swift */,
+				696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */,
+				69CB46842B8BE598007E2BAA /* BlockView.swift */,
+				69CB46862B8BE81D007E2BAA /* Block.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		69CB468F2B8BF57B007E2BAA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		69CB46902B8BF589007E2BAA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69CB46942B8BF5F0007E2BAA /* UIViewController.swift */,
+				69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69CB46912B8BF59B007E2BAA /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				69CB46922B8BF5A3007E2BAA /* TopBarViewController.swift */,
+			);
+			path = TopBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +217,11 @@
 				696E612E2B8A300500C97D58 /* AppDelegate.swift in Sources */,
 				696E61CF2B8BCC6A00C97D58 /* BlockCell.swift in Sources */,
 				696E61CB2B8BCC4300C97D58 /* EditorViewController.swift in Sources */,
+				69CB46932B8BF5A3007E2BAA /* TopBarViewController.swift in Sources */,
 				69CB46852B8BE598007E2BAA /* BlockView.swift in Sources */,
 				69CB46892B8BE8AB007E2BAA /* UIView+Extensions.swift in Sources */,
 				69CB468B2B8BEA90007E2BAA /* FileSystemManager.swift in Sources */,
+				69CB46952B8BF5F0007E2BAA /* UIViewController.swift in Sources */,
 				696E61302B8A300500C97D58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

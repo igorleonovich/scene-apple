@@ -11,5 +11,5 @@ struct Block: Codable {
     
     let id: String
     let text: String
-    let childrenIds: [Block]?
+    var children: [Block]
 }

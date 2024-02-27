@@ -60,17 +60,15 @@ extension BlockView: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            // Detected return key press
             print("Return key pressed")
             delegate?.onPressReturn()
-            // Do any action you need here. For example:
-            // textView.resignFirstResponder() // to hide the keyboard
-            
-            // Return false to prevent the new line character from being added to the text view
             return false
         }
-        
-        // Return true for all other cases to allow the text change
+        return true
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        delegate?.setActiveBlock(id: block.id)
         return true
     }
 }
@@ -78,4 +76,5 @@ extension BlockView: UITextViewDelegate {
 protocol BlockViewDelegate: AnyObject {
     
     func onPressReturn()
+    func setActiveBlock(id: String)
 }

@@ -12,7 +12,7 @@ final class BlockCell: UICollectionViewCell {
     weak var delegate: BlockCellDelegate?
     
     var blockView: BlockView!
-    private var childBlockView: BlockView?
+    private var childrenStackView: UIStackView!
     
     var block: Block! {
         didSet {
@@ -35,7 +35,11 @@ final class BlockCell: UICollectionViewCell {
     
     private func setupUI() {
         backgroundColor = .lightGray
-        
+        setupBlock()
+        setupChildrenBlocks()
+    }
+    
+    private func setupBlock() {
         blockView = BlockView()
         addSubview(blockView)
         blockView.snp.makeConstraints { make in
@@ -47,10 +51,27 @@ final class BlockCell: UICollectionViewCell {
         blockView.delegate = self
     }
     
+    private func setupChildrenBlocks() {
+        childrenStackView = UIStackView()
+        addSubview(childrenStackView)
+        childrenStackView.snp.makeConstraints { make in
+            make.top.equalTo(blockView.snp.bottom)
+            make.leading.equalTo(50)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        childrenStackView.axis = .vertical
+    }
+    
     // MARK: Actions
     
     private func configure(with block: Block) {
         blockView.block = block
+        block.children.forEach { childBlock in
+            let childBlockView = BlockView()
+            childBlockView.block = childBlock
+            childrenStackView.addArrangedSubview(childBlockView)
+        }
     }
 }
 
@@ -59,10 +80,15 @@ extension BlockCell: BlockViewDelegate {
     func onPressReturn() {
         delegate?.onPressReturn()
     }
+    
+    func setActiveBlock(id: String) {
+        delegate?.setActiveBlock(id: id)
+    }
 }
 
 
 protocol BlockCellDelegate: AnyObject {
     
     func onPressReturn()
+    func setActiveBlock(id: String)
 }
