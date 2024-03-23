@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		693AF0922BAF7F3C0083ADD7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693AF0912BAF7F3C0083ADD7 /* Router.swift */; };
 		696E612E2B8A300500C97D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E612D2B8A300500C97D58 /* AppDelegate.swift */; };
 		696E61302B8A300500C97D58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E612F2B8A300500C97D58 /* SceneDelegate.swift */; };
 		696E61352B8A300500C97D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 696E61332B8A300500C97D58 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		696E61CF2B8BCC6A00C97D58 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */; };
 		698F67732B8BE0F500B86821 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 698F67722B8BE0F500B86821 /* SnapKit */; };
 		698F67752B8BE28C00B86821 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F67742B8BE28C00B86821 /* Constants.swift */; };
+		6999E8792B8E752A00C3E7ED /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999E8782B8E752A00C3E7ED /* UIStackView+Extensions.swift */; };
 		69CB46852B8BE598007E2BAA /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46842B8BE598007E2BAA /* BlockView.swift */; };
 		69CB46872B8BE81D007E2BAA /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46862B8BE81D007E2BAA /* Block.swift */; };
 		69CB46892B8BE8AB007E2BAA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */; };
@@ -25,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		693AF0912BAF7F3C0083ADD7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		696E612A2B8A300500C97D58 /* Scene-Apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scene-Apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		696E612D2B8A300500C97D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		696E612F2B8A300500C97D58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		696E61CA2B8BCC4300C97D58 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		696E61CE2B8BCC6A00C97D58 /* BlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		698F67742B8BE28C00B86821 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6999E8782B8E752A00C3E7ED /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		69CB46842B8BE598007E2BAA /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		69CB46862B8BE81D007E2BAA /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				69CB468A2B8BEA90007E2BAA /* FileSystemManager.swift */,
+				693AF0912BAF7F3C0083ADD7 /* Router.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			children = (
 				69CB46942B8BF5F0007E2BAA /* UIViewController.swift */,
 				69CB46882B8BE8AB007E2BAA /* UIView+Extensions.swift */,
+				6999E8782B8E752A00C3E7ED /* UIStackView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698F67752B8BE28C00B86821 /* Constants.swift in Sources */,
+				6999E8792B8E752A00C3E7ED /* UIStackView+Extensions.swift in Sources */,
 				69CB46872B8BE81D007E2BAA /* Block.swift in Sources */,
 				696E612E2B8A300500C97D58 /* AppDelegate.swift in Sources */,
 				696E61CF2B8BCC6A00C97D58 /* BlockCell.swift in Sources */,
@@ -223,6 +230,7 @@
 				69CB468B2B8BEA90007E2BAA /* FileSystemManager.swift in Sources */,
 				69CB46952B8BF5F0007E2BAA /* UIViewController.swift in Sources */,
 				696E61302B8A300500C97D58 /* SceneDelegate.swift in Sources */,
+				693AF0922BAF7F3C0083ADD7 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +386,7 @@
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Scene-Apple/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scene;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -407,6 +416,7 @@
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Scene-Apple/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scene;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -67,6 +67,7 @@ final class BlockCell: UICollectionViewCell {
     
     private func configure(with block: Block) {
         blockView.block = block
+        childrenStackView.removeArrangedSubviews()
         block.children.forEach { childBlock in
             let childBlockView = BlockView()
             childBlockView.block = childBlock

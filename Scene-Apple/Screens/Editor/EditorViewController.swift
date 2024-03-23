@@ -96,7 +96,7 @@ final class EditorViewController: UIViewController {
     }
     
     private func createBlock() {
-        let block = Block(id: UUID().uuidString, text: "Your text", children: [])
+        let block = Block()
         blocks.append(block)
         collectionView.reloadData()
         saveBlocks()

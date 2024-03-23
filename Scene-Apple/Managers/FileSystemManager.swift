@@ -14,6 +14,7 @@ final class FileSystemManager {
     func getFileData(fileName: String, fileFormat: String) throws -> Data? {
         if isFileExists(fileName: fileName, fileFormat: fileFormat),
            let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
+            print("[FILE SYSTEM MANAGER] Get filed data from URL:\n\(fileURL)")
             return try Data(contentsOf: fileURL)
         } else if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Get: File not found") as? Error {
             print(error)
