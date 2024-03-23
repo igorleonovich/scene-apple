@@ -15,7 +15,6 @@ struct Block: Codable {
     var isCollapsed = true
     var description = ""
     var descriptionState: DescriptionState = .folded
-    var isService = false
     var blockType: BlockType = .common
 }
 
