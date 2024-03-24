@@ -15,7 +15,7 @@ struct Block: Codable {
     var isCollapsed = true
     var description = ""
     var descriptionState: DescriptionState = .folded
-    var blockType: BlockType = .common
+    var blockType: BlockType = .point
 }
 
 enum DescriptionState: String, Codable {
@@ -27,12 +27,14 @@ enum DescriptionState: String, Codable {
 
 enum BlockType: String, Codable {
     
-    case rootPoint
-    case view
+//    case view
     case automaticSection
     case manualSection
-    case groupAsSection
-    case sceneMark
-    case episodeMark
-    case common
+    
+// Add it just on UI, not to real structure:
+//    case rootPoint
+//    case sceneMark
+//    case episodeMark
+    
+    case point
 }
