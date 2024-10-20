@@ -12,7 +12,7 @@ final class EditorViewController: UIViewController {
 
     private var topBarViewController: TopBarViewController!
     private var collectionView: UICollectionView!
-    
+
     private var blocks = [Block]()
     private var activeBlockId: String?
     
@@ -154,11 +154,11 @@ extension EditorViewController: BlockCellDelegate {
 
 extension EditorViewController: TopBarViewControllerDelegate {
     
-    func onToLeft() {
+    func onToTheLeft() {
         print(activeBlockId)
     }
     
-    func onToRight() {
+    func onToTheRight() {
         print(activeBlockId)
         
         if let activeBlockId = activeBlockId, let activeBlockIndex = blocks.firstIndex(where: { $0.id == activeBlockId }) {

@@ -47,6 +47,8 @@ final class BlockView: UIView {
         addSubview(textView)
         textView.snap(offset: 10)
         textView.delegate = self
+        textView.backgroundColor = .black
+        textView.textColor = .white
     }
     
     // MARK: Actions

@@ -18,28 +18,41 @@ final class TopBarViewController: UIViewController {
         stackView.snap()
         stackView.distribution = .fillEqually
         
-        let toLeftButton = UIButton()
-        toLeftButton.addTarget(self, action: #selector(onToLeft), for: .touchUpInside)
-        toLeftButton.setTitle("To Left", for: .normal)
-        stackView.addArrangedSubview(toLeftButton)
+        let toTheLeftButton = MoveBlockButton()
+        toTheLeftButton.addTarget(self, action: #selector(onToTheLeft), for: .touchUpInside)
+        toTheLeftButton.setTitle("To The Left", for: .normal)
+        stackView.addArrangedSubview(toTheLeftButton)
         
-        let toRightButton = UIButton()
-        toRightButton.addTarget(self, action: #selector(onToRight), for: .touchUpInside)
-        toRightButton.setTitle("To Right", for: .normal)
-        stackView.addArrangedSubview(toRightButton)
+        let toTheRightButton = MoveBlockButton()
+        toTheRightButton.addTarget(self, action: #selector(onToTheRight), for: .touchUpInside)
+        toTheRightButton.setTitle("To The Right", for: .normal)
+        stackView.addArrangedSubview(toTheRightButton)
     }
     
-    @objc private func onToLeft() {
-        delegate?.onToLeft()
+    @objc private func onToTheLeft() {
+        delegate?.onToTheLeft()
     }
     
-    @objc private func onToRight() {
-        delegate?.onToRight()
+    @objc private func onToTheRight() {
+        delegate?.onToTheRight()
     }
 }
 
 protocol TopBarViewControllerDelegate: AnyObject {
     
-    func onToLeft()
-    func onToRight()
+    func onToTheLeft()
+    func onToTheRight()
+}
+
+final class MoveBlockButton: UIButton {
+    
+    init() {
+        super.init(frame: .zero)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = .gray
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
