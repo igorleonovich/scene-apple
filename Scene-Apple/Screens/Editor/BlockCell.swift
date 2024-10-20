@@ -34,7 +34,7 @@ final class BlockCell: UICollectionViewCell {
     // MARK: Setup
     
     private func setupUI() {
-        backgroundColor = .lightGray
+        backgroundColor = .darkGray
         setupBlock()
         setupChildrenBlocks()
     }

@@ -48,8 +48,8 @@ final class MoveBlockButton: UIButton {
     
     init() {
         super.init(frame: .zero)
-        setTitleColor(.white, for: .normal)
-        backgroundColor = .gray
+        setTitleColor(.black, for: .normal)
+        backgroundColor = .lightGray
     }
     
     required init?(coder: NSCoder) {

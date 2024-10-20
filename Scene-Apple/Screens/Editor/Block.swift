@@ -38,3 +38,19 @@ enum BlockType: String, Codable {
     
     case point
 }
+
+// [TODO] Определить структуру данных
+// Варианты:
+// 1. Писать всё классами, и мапить при необходимости на структуры
+// 2. Всё на структурах, смаплено через id
+
+//class Point: NSObject {
+//class Point {
+//    var id: UUID
+//    let text: String
+//    
+//    init(id: UUID = UUID(), text: String) {
+//        self.id = id
+//        self.text = text
+//    }
+//}

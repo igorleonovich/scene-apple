@@ -9,7 +9,7 @@ import UIKit
 
 final class BlockView: UIView {
     
-    static let itemHeight: CGFloat = 50
+    static let itemHeight: CGFloat = 70
     
     weak var delegate: BlockViewDelegate?
     
@@ -45,10 +45,16 @@ final class BlockView: UIView {
     private func setupUI() {
         textView = UITextView()
         addSubview(textView)
-        textView.snap(offset: 10)
+        textView.snp.makeConstraints { make in
+            make.top.equalTo(10)
+            make.leading.equalTo(20)
+            make.trailing.equalTo(-20)
+            make.bottom.equalTo(-10)
+        }
         textView.delegate = self
         textView.backgroundColor = .black
         textView.textColor = .white
+        textView.font = .systemFont(ofSize: 26, weight: .regular)
     }
     
     // MARK: Actions
