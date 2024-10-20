@@ -33,7 +33,7 @@ final class EditorViewController: UIViewController {
         topBarViewController = TopBarViewController()
         add(child: topBarViewController)
         topBarViewController.view.snp.remakeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.height.equalTo(50)
@@ -160,13 +160,16 @@ extension EditorViewController: TopBarViewControllerDelegate {
     
     func onToRight() {
         print(activeBlockId)
+        
         if let activeBlockId = activeBlockId, let activeBlockIndex = blocks.firstIndex(where: { $0.id == activeBlockId }) {
             let previousBlockIndex = activeBlockIndex - 1
-            var newPreviousBlock = blocks[previousBlockIndex]
+            var previousBlock = blocks[previousBlockIndex]
             let activeBlock = blocks[activeBlockIndex]
             
-            newPreviousBlock.children.append(activeBlock)
-            blocks[previousBlockIndex] = newPreviousBlock
+            guard !previousBlock.children.map({ $0.id }).contains(activeBlockId) else { return }
+            
+            previousBlock.children.append(activeBlock)
+            blocks[previousBlockIndex] = previousBlock
             
             self.activeBlockId = nil
             blocks.remove(at: activeBlockIndex)
